@@ -1,0 +1,262 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    /* Slightly adjust light-bg for potentially better contrast with overlay */
+    --light-bg: #eef2f5;
+    --white: #ffffff;
+    --border-color: #ced4da;
+    --input-bg: #ffffff;
+    --text-color: #495057;
+    --heading-color: #343a40;
+    --success-bg: #e9f7ef;
+    --success-border: #b7e4c7;
+    --success-text: #1d7a46;
+    --error-bg: #f8d7da;
+    --error-border: #f5c6cb;
+    --error-text: #721c24;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    /* Add a semi-transparent overlay color */
+    --bg-overlay-color: rgba(255, 255, 255, 0.8); /* White overlay with 80% opacity */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    /* Background Image Properties */
+    background-image: linear-gradient(var(--bg-overlay-color), var(--bg-overlay-color)), url('/static/images/background.jpg'); /* <<< UPDATE PATH IF NEEDED */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Keep image fixed during scroll */
+    background-color: var(--light-bg); /* Fallback color */
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* --- Main Container --- */
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: var(--white); /* Solid white background is important for readability over the image */
+    padding: 35px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ... (rest of the container, headings, text styles remain the same) ... */
+
+
+/* --- Form Styling --- */
+#strokeForm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px 30px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group.full-width {
+     grid-column: 1 / -1;
+}
+
+.form-group label:not([for^="hyp_"]):not([for^="hd_"]):not([for^="mar_"]):not([for^="res_"]) { /* Select labels NOT associated with radio buttons by their 'for' attribute */
+    display: block; /* Keep labels for inputs/selects as block */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 0.95em;
+}
+
+/* Label specifically for radio groups */
+.form-group label.radio-group-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 0.95em;
+}
+
+
+/* Radio button groups need special handling */
+.form-group .radio-group {
+    display: flex;
+    flex-direction: column; /* <<< CHANGE: Stack items vertically */
+    gap: 10px; /* <<< ADJUST: Vertical gap between radio options */
+    /* Removed border for vertical layout, adjust padding if needed */
+    padding: 5px 0; /* Optional: Add slight vertical padding */
+    border-radius: 5px;
+    /* Removed background color - less necessary now */
+}
+
+.form-group .radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 8px; /* Increase spacing slightly */
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent radio from shrinking */
+}
+.form-group input[type="radio"] + label {
+    font-weight: normal;
+    color: var(--text-color);
+    margin-bottom: 0;
+    cursor: pointer;
+    line-height: 1.3; /* Ensure label text aligns well */
+}
+
+/* ... (rest of input, select, button, result/error box styles remain the same) ... */
+
+/* Style text inputs, number inputs, and selects */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state for inputs/selects */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Placeholder text styling */
+.form-group input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* Helper text */
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: var(--secondary-color);
+    font-size: 0.85em;
+}
+
+
+/* --- Submit Button --- */
+button[type="submit"] {
+    grid-column: 1 / -1;
+    padding: 14px 20px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #0069d9, #004fa3);
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+
+/* --- Result & Error Boxes --- */
+.result-box, .error-box {
+    margin-top: 30px;
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-box {
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--success-text);
+}
+
+.error-box {
+    background-color: var(--error-bg);
+    border: 1px solid var(--error-border);
+    color: var(--error-text);
+}
+
+.result-box h2, .error-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.result-box h2 { color: var(--success-text); }
+.error-box p { color: var(--error-text); font-weight: 500; }
+
+
+#predictionText {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#probabilityText {
+    font-size: 1.1em;
+}
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+        background-attachment: scroll; /* Fixed attachment can be weird on mobile */
+    }
+    .container {
+        padding: 25px 20px;
+    }
+    #strokeForm {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+     button[type="submit"] {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+}
