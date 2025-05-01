@@ -25,11 +25,13 @@ The backend is built with Python using Flask, Scikit-learn, and Pandas, while th
 ## Screenshots
 
 <!-- Add screenshots of your application here! -->
-**Input Form:**
-![Input Form Screenshot]([link/to/your/screenshot_form.png](https://raw.githubusercontent.com/prince-kumar-dev/stroke-predictor-using-ml/refs/heads/main/input.png)) <!-- Replace with actual link -->
+<!-- Add screenshots of your application here! -->
+**Input Form:**  
+![Input Form Screenshot](https://raw.githubusercontent.com/prince-kumar-dev/stroke-predictor-using-ml/refs/heads/main/input.png)
 
-**Prediction Result (Example: Medium Risk):**
-![Prediction Result Screenshot]([link/to/your/screenshot_result.png](https://raw.githubusercontent.com/prince-kumar-dev/stroke-predictor-using-ml/refs/heads/main/prediction_result.png)) <!-- Replace with actual link -->
+**Prediction Result (Example: Medium Risk):**  
+![Prediction Result Screenshot](https://raw.githubusercontent.com/prince-kumar-dev/stroke-predictor-using-ml/refs/heads/main/prediction_result.png)
+
 
 *(Please replace the placeholder links above with actual URLs to your screenshots after uploading them, perhaps to an `assets` folder in your repo)*
 
