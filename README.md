@@ -32,9 +32,6 @@ The backend is built with Python using Flask, Scikit-learn, and Pandas, while th
 **Prediction Result (Example: Medium Risk):**  
 ![Prediction Result Screenshot](https://raw.githubusercontent.com/prince-kumar-dev/stroke-predictor-using-ml/refs/heads/main/prediction_result.png)
 
-
-*(Please replace the placeholder links above with actual URLs to your screenshots after uploading them, perhaps to an `assets` folder in your repo)*
-
 ## Tech Stack
 
 *   **Backend:**
@@ -48,7 +45,7 @@ The backend is built with Python using Flask, Scikit-learn, and Pandas, while th
     *   CSS3
     *   JavaScript (Fetch API for backend communication)
 *   **Dataset:**
-    *   `healthcare-dataset-stroke-data.csv` (Source: Specify source, e.g., Kaggle)
+    *   `healthcare-dataset-stroke-data.csv` (Source: Kaggle)
 
 ## Project Structure
 
